@@ -45,6 +45,14 @@ describe('GridComponent', () => {
     it('doit être lié au composant', () => {
       expect(component.canvas).toBeDefined();
     });
+
+    it('doit prendre en charge le click sur une case', () => {
+      expect(component.gridClick_handler).toBeDefined();
+    });
+
+    it('doit pouvoir retrouver la position d une cellule en fonction de ces coordonnées', () => {
+      expect(component.getCellFromCoordinates).toBeDefined();
+    });
   });
 
   describe('le formulaire', () => {

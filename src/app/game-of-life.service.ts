@@ -8,11 +8,13 @@ export class GameOfLifeService {
   private LIVE = 3;
   private STAY = 2;
   private cells = [
+    /*
     { line: 10, column: 10 },
     { line: 10, column: 11 },
     { line: 10, column: 12 },
     { line: 9, column: 12 },
     { line: 8, column: 11 }
+    */
   ];
   /*
    * Retourne l'ensemble des cellules
@@ -37,7 +39,7 @@ export class GameOfLifeService {
     let deleted = false;
     if (this.isAliveAt(column, line)) {
       this.cells = this.cells.filter(
-        cell => cell.column !== column && cell.line !== line
+        cell => !(cell.column === column && cell.line === line)
       );
       deleted = true;
     }

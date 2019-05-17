@@ -73,7 +73,7 @@ export class DrawerService {
   ) {
     this.openLayer(context);
     this.rectangle(context, coordinates);
-    this.ink(context, 'rgba(10, 24, 244, 0.5)', true);
+    this.ink(context, 'rgba(10, 24, 244, 0.3)', true);
     this.closeLayer(context);
   }
 }

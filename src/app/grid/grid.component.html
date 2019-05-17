@@ -1,3 +1,9 @@
-<input type="number" id="gof-grid-cells-per-side" [value]="cellsPerSide">
-<input type="number" name="gof-grid-width" [value]="gridWidth">
-<canvas id="gof-grid-canvas" #grid [width]="gridWidth" [height]="gridWidth" style="border: 2px solid red"></canvas>
+<!--
+    <canvas id="gof-grid-canvas" #grid [width]="gridWidth" [height]="gridWidth" (click)="gridClick_handler($event)"
+      (mousemove)="gridOver_handler($event)"></canvas>
+-->
+
+<canvas id="gof-grid-canvas" #grid [width]="gridWidth" [height]="gridWidth"
+  (click)="gridClick_handler($event)"></canvas>
+<button (click)="run()">run</button>
+<button (click)="stop()">stop</button>
