@@ -1,0 +1,7 @@
+{
+  "editor.formatOnSave": true,
+  "editor.minimap.enabled": false,
+  "prettier.singleQuote": true,
+  "editor.fontSize": 12,
+  "fold.level": 2
+}
