@@ -163,7 +163,7 @@ export class GridComponent implements OnInit, OnChanges, AfterViewInit {
 
   redraw() {
     this.flushAll();
-    //this.drawGrid();
+    this.drawGrid();
     this.drawCells();
   }
 

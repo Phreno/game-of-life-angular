@@ -54,26 +54,4 @@ describe('GridComponent', () => {
       expect(component.getCellFromCoordinates).toBeDefined();
     });
   });
-
-  describe('le formulaire', () => {
-    it('doit disposer d un champ qui va renseigner le nombre de cellules par coté', () => {
-      const compiled = fixture.debugElement.nativeElement;
-      expect(compiled.querySelector('#gof-grid-cells-per-side')).toBeDefined();
-    });
-    it('doit disposer d un nombre de cellule par cote par défault', () => {
-      const compiled = fixture.debugElement.nativeElement;
-      expect(compiled.querySelector('#gof-grid-cells-per-side').value).toEqual(
-        '30'
-      );
-    });
-    it('doit associer la taille de la cellule avec le nombre de cellules par coté', () => {
-      // On a vu dans les tests précédents que la grille dispose d une largeur et d une
-      // hauteur par défault
-      expect(component.cellSize).toBe(10);
-    });
-    it('doit disposer d un champ qui va renseigner la taille de la grille', () => {
-      const compiled = fixture.debugElement.nativeElement;
-      expect(compiled.querySelector('#gof-grid-width')).toBeDefined();
-    });
-  });
 });
