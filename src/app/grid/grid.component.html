@@ -3,20 +3,19 @@
             (mousemove)="gridOver_handler($event)"></canvas>
       -->
   <div class="card" style="width: 350px;">
-    <div class="card-header">
-    </div>
+    <div class="card-header "></div>
     <div class="card-body">
       <div class="container">
         <div class="col">
+
           <!-- GRILLE -->
-          <div class="row  d-flex justify-content-center mt-2 mb-5">
+          <div class="row  d-flex justify-content-center  mb-4">
             <canvas id="gof-grid-canvas" class="border rounded shadow" #grid [width]="gridWidth" [height]="gridWidth"
               (click)="gridClick_handler($event)"></canvas>
           </div>
 
           <!-- PLAYER -->
           <div class="row  d-flex justify-content-center">
-
             <div class="btn-group" role="group" aria-label="">
               <button type="button" (click)="run()" class="btn btn-primary">
                 <i class="fa fa-play" aria-hidden="true"></i>
@@ -28,8 +27,8 @@
                 <i class="fa fa-trash" aria-hidden="true"></i>
               </button>
             </div>
-
           </div>
+
         </div>
       </div>
     </div>

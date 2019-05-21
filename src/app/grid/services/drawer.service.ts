@@ -69,11 +69,12 @@ export class DrawerService {
 
   fillRectangle(
     context: CanvasRenderingContext2D,
-    coordinates: { start: any; end: any }
+    coordinates: { start: any; end: any },
+    color = 'rgba(255, 0, 0, 0.5)'
   ) {
     this.openLayer(context);
     this.rectangle(context, coordinates);
-    this.ink(context, 'rgba(10, 24, 244, 0.3)', true);
+    this.ink(context, color, true);
     this.closeLayer(context);
   }
 }

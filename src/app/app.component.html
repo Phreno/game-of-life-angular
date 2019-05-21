@@ -1,11 +1,20 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div class="container">
-  <div class="row">
-    <div class="col">
-      <!-- TODO: configuration -->
-      <!-- TODO: pattern-selector -->
-      <app-grid></app-grid>
+<app-header></app-header>
 
-    </div>
+<div class="container-fluid">
+
+  <div class="row">
+    <!-- MENU LATÉRAL GAUCHE -->
+    <nav class="col-md-2 d-none d-md-block sidebar">
+      <app-menu></app-menu>
+    </nav>
+
+    <!-- GRILLE -->
+    <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+      <app-grid></app-grid>
+    </main>
+
   </div>
+
+  <app-footer></app-footer>
 </div>

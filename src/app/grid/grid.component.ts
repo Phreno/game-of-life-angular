@@ -7,9 +7,9 @@ import {
   SimpleChanges,
   ViewChild
 } from '@angular/core';
-import { DrawerService } from '../drawer.service';
-import { GameOfLifeService } from '../game-of-life.service';
-import { GridService } from '../grid.service';
+import { DrawerService } from './services/drawer.service';
+import { GameOfLifeService } from './services/game-of-life.service';
+import { GridService } from './services/grid.service';
 const DEFAULT_GRID_WIDTH = 300;
 const DEFAULT_CELL_PER_SIDE = 30;
 
