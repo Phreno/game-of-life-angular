@@ -34,14 +34,6 @@ describe('GridComponent', () => {
       expect(compiled.querySelector('#gof-grid-canvas').width).toBe(300);
     });
 
-    it('doit modifié sa taille lors du changement de la variable gridWidth', () => {
-      const newWidth = 10;
-      component.gridWidth = newWidth;
-      const compiled = fixture.debugElement.nativeElement;
-      expect(compiled.querySelector('#gof-grid-canvas').height).toBe(newWidth);
-      expect(compiled.querySelector('#gof-grid-canvas').width).toBe(newWidth);
-    });
-
     it('doit être lié au composant', () => {
       expect(component.canvas).toBeDefined();
     });

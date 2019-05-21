@@ -1,5 +1,4 @@
 import { TestBed } from '@angular/core/testing';
-import { ElementRef } from '@angular/core';
 
 import { GridService } from './grid.service';
 
@@ -41,11 +40,6 @@ describe('GridService', () => {
       expect(() => {
         service.getCellAtColumnLine(1, 0);
       }).not.toThrow(Error('Indice de colone incorrect'));
-    });
-
-    it('doit retourner les coordonnées en pixel de la cellule à la position col/line', () => {
-      const service: GridService = TestBed.get(GridService);
-      expect(false).toBeTruthy();
     });
   });
 
