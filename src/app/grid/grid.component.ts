@@ -11,7 +11,7 @@ import { DrawerService } from './services/drawer.service';
 import { GameOfLifeService } from './services/game-of-life.service';
 import { GridService } from './services/grid.service';
 const DEFAULT_GRID_WIDTH = 300;
-const DEFAULT_CELL_PER_SIDE = 30;
+const DEFAULT_CELL_PER_SIDE = 50;
 
 @Component({
   selector: 'app-grid',
@@ -219,14 +219,6 @@ export class GridComponent implements OnInit, OnChanges, AfterViewInit {
         .getCells(this.grid, this.cellsPerSide)
         .map(el => el.position)
     );
-    /*   .map(el =>
-        this.gridService.getCellAtColumnLine(
-          this.grid,
-          this.cellsPerSide,
-          el.column,
-          el.line
-        )
-      );*/
     this.gameOfLifeService.updateWith(randomCells);
     this.redraw();
   }
