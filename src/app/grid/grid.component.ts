@@ -50,6 +50,14 @@ export class GridComponent implements OnInit, OnChanges, AfterViewInit {
     return this.gridService.getCells(this.grid, this.cellsPerSide);
   }
 
+  get services() {
+    return {
+      gameOfLife: this.gameOfLifeService,
+      drawer: this.drawerService,
+      grid: this.gridService
+    };
+  }
+
   next() {
     const next = this.gridCells
       .map(cell =>
@@ -195,13 +203,31 @@ export class GridComponent implements OnInit, OnChanges, AfterViewInit {
     this.redraw();
   }
 
-  private debug() {
-    this.gridCells.map(cell => {
-      this.drawerService.fillRectangle(this.context, cell.strokes);
-    });
+  flushGrid() {
+    this.gameOfLifeService.killAll();
+    this.redraw();
   }
+  private debug() {}
 
   ngOnChanges(changes: SimpleChanges) {
     console.log(changes);
+  }
+
+  setupRandom() {
+    const randomCells = this.gameOfLifeService.randomize(
+      this.gridService
+        .getCells(this.grid, this.cellsPerSide)
+        .map(el => el.position)
+    );
+    /*   .map(el =>
+        this.gridService.getCellAtColumnLine(
+          this.grid,
+          this.cellsPerSide,
+          el.column,
+          el.line
+        )
+      );*/
+    this.gameOfLifeService.updateWith(randomCells);
+    this.redraw();
   }
 }

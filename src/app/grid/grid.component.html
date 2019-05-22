@@ -1,39 +1,47 @@
-  <!--
-          <canvas id="gof-grid-canvas" #grid [width]="gridWidth" [height]="gridWidth" (click)="gridClick_handler($event)"
-            (mousemove)="gridOver_handler($event)"></canvas>
-      -->
-  <div class="card" style="width: 350px;">
-    <div class="card-header "></div>
-    <div class="card-body">
-      <div class="container">
-        <div class="col">
+<div class="card" style="width: 350px;">
+  <div class="card-header "></div>
+  <div class="card-body">
+    <div class="container">
+      <div class="col">
 
-          <!-- GRILLE -->
-          <div class="row  d-flex justify-content-center  mb-4">
-            <canvas id="gof-grid-canvas" class="border rounded shadow" #grid [width]="gridWidth" [height]="gridWidth"
-              (click)="gridClick_handler($event)"></canvas>
-          </div>
-
-          <!-- PLAYER -->
-          <div class="row  d-flex justify-content-center">
-            <div class="btn-group" role="group" aria-label="">
-              <button type="button" (click)="run()" class="btn btn-primary">
-                <i class="fa fa-play" aria-hidden="true"></i>
-              </button>
-              <button type="button" (click)="stop()" class="btn btn-secondary">
-                <i class="fa fa-stop" aria-hidden="true"></i>
-              </button>
-              <button type="button" class="btn btn-danger">
-                <i class="fa fa-trash" aria-hidden="true"></i>
-              </button>
-            </div>
-          </div>
-
+        <!-- GRILLE -->
+        <div class="row  d-flex justify-content-center  mb-4">
+          <canvas id="gof-grid-canvas" class="border rounded shadow" #grid [width]="gridWidth" [height]="gridWidth"
+            (click)="gridClick_handler($event)"></canvas>
+          <!--
+                <canvas id="gof-grid-canvas" #grid [width]="gridWidth" [height]="gridWidth"
+                  (click)="gridClick_handler($event)" (mousemove)="gridOver_handler($event)"></canvas>
+                -->
         </div>
+
+        <!-- PLAYER -->
+        <div class="row  d-flex justify-content-center">
+          <div class="btn-group mr-2 text-white" role="group" aria-label="">
+            <button type="button" (click)="run()" class="btn text-white"
+              [ngClass]="{ 'bg-success': !!loopInterval, 'bg-primary': !loopInterval }">
+              <i class="fa fa-play" aria-hidden="true"></i>
+            </button>
+            <button type="button" (click)="stop()" class="btn btn-primary" [ngClass]="btn-primary">
+              <i class="fa fa-pause" aria-hidden="true"></i>
+            </button>
+          </div>
+
+          <!-- ACTION -->
+          <div class="btn-group" role="group" aria-label="">
+            <button type="button" (click)="flushGrid()" class="btn btn-primary">
+              <i class="fa fa-eraser" aria-hidden="true"></i>
+            </button>
+            <button type="button" (click)="setupRandom()" class="btn btn-primary">
+              <i class="fa fa-random" aria-hidden="true"></i>
+            </button>
+          </div>
+        </div>
+
       </div>
     </div>
-
-    <div class="card-footer text-muted">
-    </div>
-
   </div>
+
+  <div class="card-footer text-muted">
+  </div>
+
+</div>

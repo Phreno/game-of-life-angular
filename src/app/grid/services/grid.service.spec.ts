@@ -19,26 +19,26 @@ describe('GridService', () => {
     it('doit retourner une erreur si la colone n’est pas fournie', () => {
       const service: GridService = TestBed.get(GridService);
       expect(() => {
-        service.getCellAtColumnLine(undefined, 1);
+        service.getCellAtColumnLine(undefined, undefined, undefined, 1);
       }).toThrow(Error('Indice de colone incorrect'));
       expect(() => {
-        service.getCellAtColumnLine(-1, 1);
+        service.getCellAtColumnLine(undefined, undefined, -1, 1);
       }).toThrow(Error('Indice de colone incorrect'));
       expect(() => {
-        service.getCellAtColumnLine(0, 1);
+        service.getCellAtColumnLine(undefined, undefined, 0, 1);
       }).not.toThrow(Error('Indice de colone incorrect'));
     });
 
     it('doit retourner une erreur si la ligne n’est pas fournie', () => {
       const service: GridService = TestBed.get(GridService);
       expect(() => {
-        service.getCellAtColumnLine(1, undefined);
+        service.getCellAtColumnLine(undefined, undefined, 1, undefined);
       }).toThrow(Error('Indice de colone incorrect'));
       expect(() => {
-        service.getCellAtColumnLine(1, -1);
+        service.getCellAtColumnLine(undefined, undefined, 1, -1);
       }).toThrow(Error('Indice de colone incorrect'));
       expect(() => {
-        service.getCellAtColumnLine(1, 0);
+        service.getCellAtColumnLine(undefined, undefined, 1, 0);
       }).not.toThrow(Error('Indice de colone incorrect'));
     });
   });

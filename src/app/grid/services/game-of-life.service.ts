@@ -8,19 +8,21 @@ export class GameOfLifeService {
   private LIVE = 3;
   private STAY = 2;
   private cells = [
-    /*
     { line: 10, column: 10 },
-    { line: 10, column: 11 },
+    { line: 10, column: 10 },
     { line: 10, column: 12 },
     { line: 9, column: 12 },
     { line: 8, column: 11 }
-    */
   ];
   /*
    * Retourne l'ensemble des cellules
    * */
   getCells() {
-    return this.cells;
+    return this.cells || [];
+  }
+
+  killAll() {
+    this.cells = [];
   }
 
   /*
@@ -97,5 +99,14 @@ export class GameOfLifeService {
 
   updateWith(next) {
     this.cells = next;
+  }
+
+  randomize(cellArray: Array<{ line: number; column: number }>) {
+    if (!cellArray) {
+      throw new Error('Aucun tableau fourni en paramètre');
+    }
+    const size = Math.floor(Math.random() * cellArray.length);
+    const shuffled = cellArray.sort(() => 0.5 - Math.random());
+    return shuffled.slice(0, size);
   }
 }

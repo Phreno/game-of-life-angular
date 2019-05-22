@@ -100,12 +100,20 @@ export class GridService {
     return cells;
   }
 
-  getCellAtColumnLine(column: number, line: number) {
+  getCellAtColumnLine(
+    canvas: { width: number; height: number },
+    cellsPerSide: number,
+    column: number,
+    line: number
+  ) {
     const wrongColumn = undefined === column || null === column || 0 > column;
     const wrongLine = undefined === line || null === line || 0 > line;
     if (wrongColumn || wrongLine) {
       throw new Error('Indice de colone incorrect');
     }
+    return this.getCells(canvas, cellsPerSide).find(
+      cell => cell.position.column === column && cell.position.line === line
+    );
   }
 
   private checkArgs(
